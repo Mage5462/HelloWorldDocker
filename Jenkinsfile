@@ -15,7 +15,7 @@ pipeline {
         }
 	stage('Docker push image') {
             steps {
-                bat 'docker push mageshwari072/nginx- helloworldpipeline:1.0'
+                bat 'docker push mageshwari072/nginx-helloworldpipeline:1.0'
             }
         }
 	}
