@@ -10,14 +10,14 @@ pipeline {
 	stage('Docker build tag') {
             steps {
                 bat 'docker build -t nginx-helloworldpipeline .'
-				bat 'docker tag nginx- helloworldpipeline mageshwari072/nginx-helloworldpipeline:1.0'
+				bat 'docker tag nginx-helloworldpipeline mageshwari072/nginx-helloworldpipeline:1.0'
             }
         }
 	stage('Docker push image') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
           bat "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
-          bat 'docker push mageshwari072/nginx- helloworldpipeline:1.0'
+          bat 'docker push mageshwari072/nginx-helloworldpipeline:1.0'
         }
             }
         }
