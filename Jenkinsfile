@@ -24,7 +24,7 @@ pipeline {
 		
 	stage('Docker run hellow world application') {
             steps {
-                bat 'docker run -p 8087:80 nginx- helloworldpipeline'
+                bat 'docker run -p 8087:80 nginx-helloworldpipeline'
             }
         }
 	}
