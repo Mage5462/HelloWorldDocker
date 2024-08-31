@@ -15,10 +15,16 @@ pipeline {
         }
 	stage('Docker push image') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'dockerHub1', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
+                withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
           bat "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
           bat 'docker push mageshwari072/nginx-helloworldpipeline:1.0'
         }
+            }
+        }
+		
+	stage('Docker run hellow world application') {
+            steps {
+                bat 'docker run -p 8087:80 nginx- helloworldpipeline'
             }
         }
 	}
