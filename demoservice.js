@@ -5,7 +5,7 @@ app.use(bodyParser())
 
 var mysql = require('mysql')
 
-var con=mysql.createConnection({host:'dbserver',port:3306,
+var con=mysql.createConnection({host:'localhost',port:3306,
 user:'root',password:'root',database:'demo'})
 
 
