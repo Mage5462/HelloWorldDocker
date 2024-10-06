@@ -8,7 +8,7 @@ RUN apk add nodejs
 RUN apk add npm
 RUN npm install express
 RUN npm install body-parser
-RUN apk add mysql-client
+RUN apk add mysql
 ENV NODE_ENV=DEV
 
 CMD [ "node", "/app/demoservice.js" ]
