@@ -10,4 +10,4 @@ RUN npm install body-parser
 RUN apk add mysql-client
 ENV NODE_ENV=DEV
 
-CMD [ "npm", "start" ]
+CMD [ "node demoservice.js" ]
