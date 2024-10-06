@@ -1,5 +1,4 @@
 FROM alpine:latest
-FROM mysql:latest
 
 WORKDIR /app
 COPY . .
