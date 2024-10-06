@@ -2,6 +2,7 @@ FROM alpine:latest
 
 WORKDIR /app
 COPY . .
+COPY demoservice.js /app/demoservice.js
 
 RUN apk add nodejs
 RUN apk add npm
